@@ -1,20 +1,24 @@
 extends ./layouts/one-col-layout.jade
 
 block headerMetaBlock
-	title Competency Matrix
+	//- Replace with dynamic data
+	title LOGIN | Competency Matrix
 	meta(name='description' content='Competency Matrix using Angular JS')
 block oneColBody
 	div(class=['cm-col-6'])
 		.cm-app-tile-wrapper
 			.cm-sn-logo
 				img(class="cm-img-responsive" src="/images/sn-cm-logo.png")
+			//- Replace with dynamic data
 			h1.cm-app-title Competency Matrix
 
 	div(class=['cm-col-6'])
-		p.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		.cm-app-login-wrapper
+			form.cm-form(method="post" action="" class=['cm-login-form'])
+				fieldset.cm-fieldset(class=['cm-login-fieldset'])
+					.cm-control-group
+						label.cm-control-label(for="cm_username" class=['cm-hidden']) Username
+						input.cm-control-input(type="text" name="cm_username" placeholder="Username")
+					.cm-control-group
+						label.cm-control-label(for="cm_password" class=['cm-hidden']) Password
+						input.cm-control-input(type="password" name="cm_password" placeholder="Password")
