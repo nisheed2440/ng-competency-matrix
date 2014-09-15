@@ -1,0 +1,60 @@
+@import "lesshat.less";
+@import "normalize.less";
+@import "variables.less";
+@import "font.less";
+
+//Grid import
+@import "grid/_mobile.less";
+@import "grid/_tablet.less";
+@import "grid/_desktop.less";
+
+
+//HEADER IMPORT
+@import "header/_mobile.less";
+@import "header/_tablet.less";
+@import "header/_desktop.less";
+
+//Footer IMPORT
+@import "footer/_mobile.less";
+@import "footer/_tablet.less";
+@import "footer/_desktop.less";
+
+
+
+//LOGIN IMPORT
+@import "login/_mobile.less";
+@import "login/_tablet.less";
+@import "login/_desktop.less";
+
+
+:before, :after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.cm-img-responsive{
+	max-width: 100%;
+}
+
+.cm-body{
+	background: url(../../images/sn-cm-bg.jpg) no-repeat center center @bg-black;
+	color:@font-white;
+	.sn-centro-slab-regular;
+}
+
+.cm-container{
+	width: auto;
+	padding: 0 25px;
+
+	&:before,&:after{
+		display: table;
+		content: " ";
+	}
+
+	@media (min-width:1024px){
+		width: 960px;
+		padding: 0 10px;
+		margin: 0 auto;
+	}
+}

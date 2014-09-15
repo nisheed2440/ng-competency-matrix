@@ -1,0 +1,24 @@
+//- ONE COLOM LAYOUT
+doctype
+html
+	include ../includes/header.jade
+	body(class=['cm-body'])
+		//- Body before content
+		block oneColBodyBefore
+
+		div(class=['cm-container', 'cm-one-col'])
+			block oneColBody	
+
+		//- Body after content
+		block oneColBodyAfter
+		
+		// Common footer
+		include ../includes/footer.jade
+
+		// Scripts go here
+		//- Add any dependencies scripts					
+		block pageScriptsBefore
+		//- Add all used scripts here
+		include ../includes/scripts.jade
+		//- Add any additional scripts
+		block pageScriptsAfter

@@ -1,0 +1,18 @@
+//cm-col-6
+//cm-col-3
+//cm-col-9
+
+.grid-mixin-mobile(@container-width:100%){
+	@iterations: 12;
+	.span-loop (@i) when (@i > 0) {
+	    .cm-col-@{i} {
+	        width: @container-width;
+	        display: block;
+	        clear: both;
+	    }
+	    .span-loop(@i - 1);
+	}
+	.span-loop (@iterations);
+}
+
+.grid-mixin-mobile();

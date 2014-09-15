@@ -1,0 +1,19 @@
+.grid-mixin-tablet-desktop(@container-width:768){
+	@iterations: 12;
+	.span-loop (@i) when (@i > 0) {
+	    .cm-col-@{i} {
+	        width: percentage(((@container-width/@iterations)/@container-width) * @i);
+	        float: left;
+	        position: relative;
+	        clear: none;
+	    }
+	    .span-loop(@i - 1);
+	}
+	.span-loop (@iterations);
+}
+
+//Landscape tablet and up
+@media (min-width: 1024px){
+	.grid-mixin-tablet-desktop(1024);
+}
+
