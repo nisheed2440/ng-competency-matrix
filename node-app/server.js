@@ -1,8 +1,11 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var lessMiddleware = require('less-middleware');
 var path = require('path');
 var app = express();
 app.set('view engine', 'jade');
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use( bodyParser.urlencoded({ extended: false }) ); // to support URL-encoded bodies
 
 /**
  * Current working directory for the app
@@ -41,6 +44,12 @@ app.get('/', function(req, res) {
 //Get data from the server regarding locale and then redirect/use local language
 app.get('/cm', function(req, res) {
     res.render('login', {});
+});
+
+//Post login form data
+app.post('/cm/authenticate', function(req, res) {
+	console.log(req.body)
+    res.redirect('/cm');
 });
 
 /**

@@ -14,7 +14,7 @@ block oneColBody
 
 	div(class=['cm-col-6'])
 		.cm-app-login-wrapper
-			form.cm-form(method="post" action="" class=['cm-login-form'])
+			form.cm-form(method="post" action="/cm/authenticate" class=['cm-login-form'])
 				fieldset.cm-fieldset(class=['cm-login-fieldset'])
 					.cm-control-group
 						label.cm-control-label(for="cm_username" class=['cm-hidden']) Username
@@ -22,3 +22,8 @@ block oneColBody
 					.cm-control-group
 						label.cm-control-label(for="cm_password" class=['cm-hidden']) Password
 						input.cm-control-input(type="password" name="cm_password" placeholder="Password")
+					.cm-control-group(class=['cm-control-btn-group'])
+						input.cm-control-input(class=['cm-control-btn','cm-control-btn-block'] type="submit" value="LOGIN" name="cm_login")
+					.cm-control-group(class=['cm-control-checkbox'])
+						input.cm-control-input(type="checkbox" name="cm_login_remember") 
+						label.cm-control-label Remember Me
